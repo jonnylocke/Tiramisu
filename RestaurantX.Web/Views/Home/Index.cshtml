@@ -1,0 +1,33 @@
+﻿@model RestaurantX.Web.Models.OrderViewModel
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Submit Restaurant Orders</h1>
+    <p>Place Orders here for Restaurant X</p>
+</div>
+
+@using (Html.BeginForm("SubmitOrder", "Home", FormMethod.Post)) {
+
+    @Html.Label("Number of Bruschetta for this order")
+    <br />
+    @Html.Label(Model.Bruschetta.ToString())
+    <br />
+    <br />
+    @Html.Label("Number of Pizzas for this order")
+    <br />
+    @Html.Label(Model.Pizzas.ToString())
+    <br />
+    <br />
+    @Html.Label("Enter number of Tiramisu's for this order:")
+    <br />
+    @*@Html.TextBoxFor(x => x.Order, new { @value = 1 })*@
+    <input type="text" id="order" name="order" value="1" />
+    <input type="submit" value="Send Order" />
+
+    <br />
+    <br />
+    <p><b><i>(NOTE: 5 submitted orders is equivalent to a months worth of orders)</i></b></p>
+}

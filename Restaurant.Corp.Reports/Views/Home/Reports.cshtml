@@ -1,0 +1,38 @@
+﻿@model Restaurant.Corp.Adapters.Dtos.StockReportModel
+@{
+    ViewBag.Title = "Reports";
+}
+
+<div class="jumbotron">
+    <h1>Management Reports</h1>
+</div>
+<br />
+
+<div>
+    <h2>@Model.ReportTitle</h2>
+</div>
+<br />
+<table class="table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Eggs</th>
+            <th>Flour</th>
+            <th>Tomatos</th>
+            <th>Mozzarella</th>
+        </tr>
+    </thead>
+    @if(Model.Stock != null)
+    {
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>@Model.Stock.Eggs</td>
+                <td>@Model.Stock.Flour</td>
+                <td>@Model.Stock.Tomatos</td>
+                <td>@Model.Stock.Mozzarella</td>
+            </tr>
+        </tbody>
+    }
+    
+</table>
